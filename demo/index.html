@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+
+<!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+
+  <title>CCTV Plugin</title>
+  
+  <link href='../css/cctv.css' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body> 
+  
+  
+
+  <nav id="super-nav">
+  </nav>
+
+  <div id="cctv">
+    <div id="blinker-holder">
+      <span id="blinker"></span>
+    </div><!-- Blinker Holder -->
+    <div id="cctv-body"></div>
+    <div id="cctv-head"></div>
+  </div><!-- CCTV --> 
+
+
+  <section id="alarm">    
+    <section id="unlock-code">
+      <h3>Hmm, looks like you're being nosy...</h3>
+      <h4>Enter the unlock code:</h4>
+      <input class="code-input" id="code1" autocomplete="off" size="1" maxlength="1" />
+      <input class="code-input" id="code2" autocomplete="off" size="1" maxlength="1" />
+      <input class="code-input" id="code3" autocomplete="off" size="1" maxlength="1" />
+      <input class="code-input" id="code4" autocomplete="off" size="1" maxlength="1" />
+      <input class="code-input" id="code5" autocomplete="off" size="1" maxlength="1" />
+      
+      <a href="#" id="alarm-code-submit">Unlock</a>
+    </section>
+  </section>
+  
+  
+  
+  <!-- Javascript -->
+  <script type="text/javascript" src="../js/jquery.min.js"></script>    
+  <script type="text/javascript" src="../js/jquery.cctv.js"></script> 
+  <script>
+    $(function() {
+      $("#cctv").cctv({
+        code:12345
+      });
+    });
+  </script>
+</body>
+
+</html>

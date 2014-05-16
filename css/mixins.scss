@@ -1,0 +1,174 @@
+
+@mixin transition($effect) {
+	-webkit-transition: $effect;
+	-moz-transition: $effect;
+	-ms-transition: $effect;
+	-o-transition: $effect;
+	/* ...and now override with proper CSS property */
+	transition: $effect;
+}
+
+@mixin transitionx2($effect, $effect2) {
+	-webkit-transition: $effect, $effect2;
+	-moz-transition: $effect, $effect2; 
+	-ms-transition: $effect, $effect2;
+	-o-transition: $effect, $effect2;
+	/* ...and now override with proper CSS property */
+	transition: $effect, $effect2;   
+}
+
+@mixin transitionx3($effect, $effect2, $effect3) { 
+	-webkit-transition: $effect, $effect2, $effect3;
+	-moz-transition: $effect, $effect2, $effect3;
+	-ms-transition: $effect, $effect2, $effect3;
+	-o-transition: $effect, $effect2, $effect3;
+	/* ...and now override with proper CSS property */
+	transition: $effect, $effect2, $effect3;
+}
+
+@mixin transitionx4($effect, $effect2, $effect3, $effect4) { 
+	-webkit-transition: $effect, $effect2, $effect3, $effect4;
+	-moz-transition: $effect, $effect2, $effect3, $effect4;
+	-ms-transition: $effect, $effect2, $effect3, $effect4;
+	-o-transition: $effect, $effect2, $effect3, $effect4;
+	/* ...and now override with proper CSS property */
+	transition: $effect, $effect2, $effect3, $effect4;
+}
+
+@mixin transform($type) {
+	-webkit-transform: $type;
+	-moz-transform: $type;
+	-ms-transform: $type;
+	-o-transform: $type;
+	transform: $type;				
+}
+
+@mixin allowTransform() {
+	-webkit-transition: -webkit-transform .4s ease; 
+	-moz-transition: -moz-transform .4s ease;
+	-o-transition: -o-transform .4s ease;
+	transition: transform .4s ease;
+}
+
+@mixin allowTransformTime($time) {
+	-webkit-transition: -webkit-transform $time ease; 
+	-moz-transition: -moz-transform $time ease;
+	-o-transition: -o-transform $time ease;
+	transition: transform $time ease;
+}
+
+@mixin allowTransformx2($style) {
+	-webkit-transition: -webkit-transform .4s ease, $style; 
+	-moz-transition: -moz-transform .4s ease, $style;
+	-o-transition: -o-transform .4s ease, $style;
+	transition: transform .4s ease, $style;
+}
+
+@mixin allowTransformTimex2($time, $style) {
+	-webkit-transition: -webkit-transform $time ease, $style; 
+	-moz-transition: -moz-transform $time ease, $style;
+	-o-transition: -o-transform $time ease, $style;
+	transition: transform $time ease, $style;
+}
+
+
+@mixin animate($style) {
+	-webkit-animation: $style;
+	-moz-animation: $style;
+	-ms-animation: $style; 
+	-o-animation: $style;
+	animation: $style;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius; 
+	border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-ms-box-shadow: $shadow; 
+	-o-box-shadow: $shadow;
+	box-shadow: $shadow;			
+}
+
+@mixin box-shadowx2($shadow, $shadow2) {
+	-webkit-box-shadow: $shadow, $shadow2;
+	-moz-box-shadow: $shadow, $shadow2;
+	-ms-box-shadow: $shadow, $shadow2; 
+	-o-box-shadow: $shadow, $shadow2;
+	box-shadow: $shadow, $shadow2;			
+}
+
+@mixin gradient($bottom, $top) {
+	background-color: $bottom;
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $bottom),color-stop(1, $top));
+	background-image: -ms-linear-gradient(bottom, $bottom, $top);
+	background-image: -moz-linear-gradient(center bottom, $bottom 0, $top 100%);
+	background-image: -o-linear-gradient(bottom, $bottom, $top);
+	background-image: -webkit-linear-gradient(bottom, $bottom, $top);
+}
+
+@mixin text-shadow($shadow) {
+	-webkit-text-shadow: $shadow;
+	-moz-text-shadow: $shadow;
+	-ms-text-shadow: $shadow; 
+	-o-text-shadow: $shadow;
+	text-shadow: $shadow;	
+}
+
+@mixin filter ($effect){
+	-webkit-filter:$effect;
+	-moz-filter:$effect;
+	-ms-filter:$effect;
+	-o-filter:$effect;
+	filter:$effect;
+}
+
+@mixin greenButton(){
+	border:1px solid #148B50;
+	@include gradient(#35A580, #31B98B);
+	color: #F1F1F1;
+	text-decoration:none;
+} 
+
+@mixin greenButtonHover(){	
+	@include gradient(#2B8467, #2B8467);
+	color: #FFF;
+}
+
+@mixin redButton(){		
+	border:1px solid #933;
+	@include gradient(#C24B4B, #C66);
+	color: #F1F1F1;
+	text-decoration:none;
+}
+
+@mixin redButtonHover(){				
+	@include gradient(#9D3535, #9D3535);
+	color: #FFF;
+}
+
+@mixin greyButton(){				
+	border:1px solid #BBB;
+	@include gradient(#EEE, #F9F9F9);
+	color: #222;
+	text-decoration:none;
+}
+
+@mixin greyButtonHover(){				
+	border:1px solid #999;
+	@include gradient(#EEE, #EEE);
+	color: #000;
+}
+
+@mixin flex() {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display:flex;
+}

@@ -1,0 +1,242 @@
+@import 'mixins';
+
+
+/* CSS Document */
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
+	margin: 0; padding: 0; border: 0; outline:0; list-style:none;line-height:1.5em;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+} 
+
+html {
+	height:100%;
+}
+
+body {
+	background: #FFF; 
+	font-size:100%;
+	height:2000px;
+	width:100%;
+	overflow-x:hidden;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+nav {
+	position:fixed;
+	display:block;
+	width:100%;
+	height:4em;
+	background:#111;
+}
+
+
+/* THE CCTV BODY */
+#cctv {
+	position:fixed;
+	display:block;
+	top:0em;
+	right:10px;
+	height:150px;
+	width:160px;
+	z-index:999;
+	
+	#blinker-holder {
+		position:absolute;
+		display:block;
+		bottom:15px;
+		width:120px;
+		right:20px;
+		height:35px;
+		z-index:999999;
+	}
+	
+	#blinker {
+		position:absolute;
+		top:8px;
+		left:40px;
+		height:8px;
+		width:8px;
+		border-radius:50%;
+		background:#EEE;
+	}
+	
+	#cctv-body {
+		position:relative;
+		display:block;
+		float:right;
+		margin-top:60px;
+		margin-right:40px;
+		margin-bottom:-10px;
+		width:20px;
+		height:50px;
+		background:url(../images/cctv-body.png) no-repeat center;
+		background-size:cover;
+	}
+	
+	#cctv-head {
+		position:relative;
+		clear:both;
+		display:block;
+		margin:auto;
+		width:120px;
+		height:35px;
+		background:url(../images/cctv-head.png) no-repeat center;
+		background-size:cover;
+	}	
+}
+
+
+
+/* THE UNLOCKING STUFF */
+#alarm {
+	position:fixed;
+	width:0; 
+	height:0;
+	overflow:hidden;
+	background:rgba(125,27,21,.9);
+	z-index:-999;
+	opacity:0;
+	@include transition(opacity .2s ease);
+}
+
+#alarm.on {
+	@include flex();
+	z-index:99999999;
+	width:100%; 
+	height:100%;
+	opacity:1;
+}
+
+#unlock-code {
+	position: relative;
+	display:inline-block;
+	margin:auto;
+	height:auto;
+	overflow:hidden;            
+	text-align: center;
+	padding:1.5em;
+	background:#111;
+	opacity:.95;
+	@include border-radius(5px);
+	@include box-shadowx2(0 0 25px rgba(0,0,0,.5), inset 0 0 50px #000);
+	
+	h3, h4 {
+		font-size:1.15em;
+		margin-bottom:5px;
+		color:#FFF;				
+	}
+	
+	h4 {
+		font-size:1em;
+		margin-bottom:15px;
+		color:#F66;
+	}
+	
+	.code-input {
+		display:inline-block;
+		font-size:1.75em; 
+		padding:.5em .25em;
+		text-align:center;
+		@include border-radius(5px);
+	}   
+	
+	input:first-child {
+		margin:0;
+	}
+	
+	.bad {
+		background:#FF4444;
+		@include animate(error 1s ease);
+	}
+	
+	#alarm-code-submit {
+		display:block;
+		margin:auto;
+		padding:.5em;	
+		width:150px;	
+		@include border-radius(5px);
+		color:#FFF;
+		margin-top:1em;
+		font-family: Verdana, Geneva, sans-serif;		
+		@include redButton();				
+	}
+	
+	#alarm-code-submit:hover {
+		@include redButtonHover();
+	}
+	
+	#alarm-code-submit.good {
+		@include greenButton();
+	}
+	
+	#alarm-code-submit.good:hover {
+		@include greenButtonHover();
+	}
+}
+
+
+#cctv #blinker-holder #blinker.on{
+	background:#FF4444;
+	@include animate(flash 1s ease-in-out infinite alternate);
+}
+
+@-webkit-keyframes flash {
+	0% { background-color:#FF4444;@include transform(scale(1));}
+	50% { background-color:#8C0000;@include transform(scale(1.1));}        
+	100% {background-color:#FF4444;@include transform(scale(1.2));}
+}
+@-moz-keyframes flash {
+	0% { background-color:#FF4444;@include transform(scale(1));}
+	50% { background-color:#8C0000;@include transform(scale(1.1));}        
+	100% {background-color:#FF4444;@include transform(scale(1.2));}
+}
+
+@-ms-keyframes flash {
+	0% { background-color:#FF4444;@include transform(scale(1));}
+	50% { background-color:#8C0000;@include transform(scale(1.1));}        
+	100% {background-color:#FF4444;@include transform(scale(1.2));}
+}
+@-o-keyframes flash {
+	0% { background-color:#FF4444;@include transform(scale(1));}
+	50% { background-color:#8C0000;@include transform(scale(1.1));}        
+	100% {background-color:#FF4444;@include transform(scale(1.2));}
+}
+@keyframes flash {
+	0% { background-color:#FF4444;@include transform(scale(1));}
+	50% { background-color:#8C0000;@include transform(scale(1.1));}        
+	100% {background-color:#FF4444;@include transform(scale(1.2));}
+}
+
+
+
+
+@-webkit-keyframes error {
+	0% { background-color:#FF4444;}
+	50% { background-color:#8C0000;}        
+	100% {background-color:#FF4444;}
+}
+@-moz-keyframes error {
+	0% { background-color:#FF4444;}
+	50% { background-color:#8C0000;}        
+	100% {background-color:#FF4444;}
+}
+
+@-ms-keyframes error {
+	0% { background-color:#FF4444;}
+	50% { background-color:#8C0000;}        
+	100% {background-color:#FF4444;}
+}
+@-o-keyframes error {
+	0% { background-color:#FF4444;}
+	50% { background-color:#8C0000;}        
+	100% {background-color:#FF4444;}
+}
+@keyframes error {
+	0% { background-color:#FF4444;}
+	50% { background-color:#8C0000;}        
+	100% {background-color:#FF4444;}
+}
