@@ -27,7 +27,8 @@ Dual licensed under the MIT license and GPL license.
     // Create the defaults once
     var pluginName = "cctv",
     defaults = {
-      code: 0
+      code: 0,
+			lockout: true
     };
 
     // The actual plugin constructor
@@ -42,7 +43,11 @@ Dual licensed under the MIT license and GPL license.
         this._name = pluginName;
         this.init();
         this.startCCTV();
-        this.secureCCTV();
+				
+				if(this.settings.lockout == true)
+				{
+        	this.secureCCTV();
+				}
       }
 
       Plugin.prototype = {

@@ -39,7 +39,8 @@ Adds a CCTV camera that pans as the users scrolls and 'records' when the user is
 	```javascript
 	$(function() {
 		$("#cctv").cctv({
-			code:12345
+			code:12345,
+			lockout: true
 		});
 	});
 	```
