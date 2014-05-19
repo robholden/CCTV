@@ -35,7 +35,7 @@ nav {
 
 
 /* THE CCTV BODY */
-#cctv {
+#cctv-holder {
 	position:fixed;
 	display:block;
 	top:0em;
@@ -140,6 +140,7 @@ nav {
 		display:inline-block;
 		font-size:1.75em; 
 		padding:.5em .25em;
+		margin-right:.15em;
 		text-align:center;
 		@include border-radius(5px);
 	}   
@@ -179,7 +180,7 @@ nav {
 }
 
 
-#cctv #blinker-holder #blinker.on{
+#cctv-holder #blinker-holder #blinker.on{
 	background:#FF4444;
 	@include animate(flash 1s ease-in-out infinite alternate);
 }

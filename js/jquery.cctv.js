@@ -4,25 +4,7 @@ Copyright (c) 2013 Robert Holden
 Dual licensed under the MIT license and GPL license.
 */
 
-
-
-
-
-
-
-
-// the semi-colon before function invocation is a safety net against concatenated
-// scripts and/or other plugins which may not be closed properly.
 ;(function ( $, window, document, undefined ) {
-
-    // undefined is used here as the undefined global variable in ECMAScript 3 is
-    // mutable (ie. it can be changed by someone else). undefined isn't really being    
-    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined
-    // can no longer be modified.
-
-    // window and document are passed through as local variable rather than global
-    // as this (slightly) quickens the resolution process and can be more efficiently
-    // minified (especially when both are regularly referenced in your plugin).
 
     // Create the defaults once
     var pluginName = "cctv",
@@ -47,18 +29,18 @@ Dual licensed under the MIT license and GPL license.
 				if(this.settings.lockout == true)
 				{
         	this.secureCCTV();
-				}
+				} 
       }
 
       Plugin.prototype = {
         init: function () {
-          // Place initialization logic here
-          // You already have access to the DOM element and
-          // the options via the instance, e.g. this.element
-          // and this.settings
-          // you can add more functions like the one below and
-          // call them like so: this.yourOtherFunction(this.element, this.settings).
-          console.log("xD");
+          // Create CCTV Elements
+					$(this.element).append('<div id="cctv-holder"><div id="blinker-holder"><span id="blinker"></span></div><div id="cctv-body"></div><div id="cctv-head"></div></div>');
+					
+					if(this.settings.lockout == true)
+					{
+						$(this.element).append('<section id="alarm"><section id="unlock-code"><h3>Hmm, looks like you\'re being nosy...</h3><h4>Enter the unlock code:</h4><input class="code-input" id="code1" autocomplete="off" size="1" maxlength="1" /><input class="code-input" id="code2" autocomplete="off" size="1" maxlength="1" /><input class="code-input" id="code3" autocomplete="off" size="1" maxlength="1" /><input class="code-input" id="code4" autocomplete="off" size="1" maxlength="1" /><input class="code-input" id="code5" autocomplete="off" size="1" maxlength="1" /><a href="#" id="alarm-code-submit">Unlock</a></section></section>');
+					}
         },
         startCCTV: function () {    
           var idleTime = 0;                   

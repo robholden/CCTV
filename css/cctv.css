@@ -36,7 +36,7 @@ nav {
 }
 
 /* THE CCTV BODY */
-#cctv {
+#cctv-holder {
   position: fixed;
   display: block;
   top: 0em;
@@ -45,7 +45,7 @@ nav {
   width: 160px;
   z-index: 999;
 }
-#cctv #blinker-holder {
+#cctv-holder #blinker-holder {
   position: absolute;
   display: block;
   bottom: 15px;
@@ -54,7 +54,7 @@ nav {
   height: 35px;
   z-index: 999999;
 }
-#cctv #blinker {
+#cctv-holder #blinker {
   position: absolute;
   top: 8px;
   left: 40px;
@@ -63,7 +63,7 @@ nav {
   border-radius: 50%;
   background: #EEE;
 }
-#cctv #cctv-body {
+#cctv-holder #cctv-body {
   position: relative;
   display: block;
   float: right;
@@ -75,7 +75,7 @@ nav {
   background: url(../images/cctv-body.png) no-repeat center;
   background-size: cover;
 }
-#cctv #cctv-head {
+#cctv-holder #cctv-head {
   position: relative;
   clear: both;
   display: block;
@@ -149,6 +149,7 @@ nav {
   display: inline-block;
   font-size: 1.75em;
   padding: .5em .25em;
+  margin-right: .15em;
   text-align: center;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -220,7 +221,7 @@ nav {
   color: #FFF;
 }
 
-#cctv #blinker-holder #blinker.on {
+#cctv-holder #blinker-holder #blinker.on {
   background: #FF4444;
   -webkit-animation: flash 1s ease-in-out infinite alternate;
   -moz-animation: flash 1s ease-in-out infinite alternate;

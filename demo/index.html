@@ -14,36 +14,11 @@
 </head>
 
 <body> 
-  
-  
 
   <nav id="super-nav">
   </nav>
 
-  <div id="cctv">
-    <div id="blinker-holder">
-      <span id="blinker"></span>
-    </div><!-- Blinker Holder -->
-    <div id="cctv-body"></div>
-    <div id="cctv-head"></div>
-  </div><!-- CCTV --> 
-
-
-  <section id="alarm">    
-    <section id="unlock-code">
-      <h3>Hmm, looks like you're being nosy...</h3>
-      <h4>Enter the unlock code:</h4>
-      <input class="code-input" id="code1" autocomplete="off" size="1" maxlength="1" />
-      <input class="code-input" id="code2" autocomplete="off" size="1" maxlength="1" />
-      <input class="code-input" id="code3" autocomplete="off" size="1" maxlength="1" />
-      <input class="code-input" id="code4" autocomplete="off" size="1" maxlength="1" />
-      <input class="code-input" id="code5" autocomplete="off" size="1" maxlength="1" />
-      
-      <a href="#" id="alarm-code-submit">Unlock</a>
-    </section>
-  </section>
-  
-  
+  <div id="cctv"></div>
   
   <!-- Javascript -->
   <script type="text/javascript" src="../js/jquery.min.js"></script>    
@@ -52,7 +27,7 @@
     $(function() {
       $("#cctv").cctv({
         code:12345,
-				lockout: false
+				lockout: true
       });
     });
   </script>
