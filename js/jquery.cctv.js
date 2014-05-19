@@ -1,5 +1,5 @@
 /*
-jQuery CCTV - v1.1
+jQuery CCTV - v2
 Copyright (c) 2013 Robert Holden
 Dual licensed under the MIT license and GPL license.
 */
