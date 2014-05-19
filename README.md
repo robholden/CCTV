@@ -21,8 +21,12 @@ Adds a CCTV camera that pans as the users scrolls and 'records' when the user is
 	```html
 	<link href='../css/cctv.css' rel='stylesheet' type='text/css'>
 	```
-	
-4. Call the plugin:
+4. Include the element
+
+	```html
+	<div id="cctv"></div>
+	```		
+5. Call the plugin:
 
 	```javascript
 	$(function() {
