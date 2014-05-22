@@ -130,6 +130,7 @@ Dual licensed under the MIT license and GPL license.
 							else 
 							{
 								$('.code-input').blur(); 
+								$('#code1').focus();
 								$('.code-input').addClass('bad');  
 								$('.code-input').val('');
 							} 
