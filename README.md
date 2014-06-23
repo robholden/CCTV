@@ -32,10 +32,11 @@ Adds a CCTV camera that pans as the users scrolls and 'records' when the user is
 	$(function() {
 		$("#cctv").cctv({
 			code:12345,
-			lockout: true
+			lockout: true // If true, the user will appear to be 'locked out' and have to enter the above code
 		});
 	});
 	```
+
 	
 ## Structure
 
