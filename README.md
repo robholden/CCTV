@@ -32,12 +32,16 @@ Adds a CCTV camera that pans as the users scrolls and 'records' when the user is
 	$(function() {
 		$("#cctv").cctv({
 			code:12345,
-			lockout: true // If true, the user will appear to be 'locked out' and have to enter the above code
+			lockout: true 
 		});
 	});
 	```
 
-	
+- The default values do not lock out a user. If ```lockout: true``` then the user will appear to be locked out and have to enter the ```code: 12345``` to re-enter. 
+- If ```code: NULL``` then the password is any combination of numbers. 
+
+**Please note: This just makes it appear the user is 'locked out', it does not physically block them; only Javascript is used here!**
+
 ## Structure
 
 The basic structure of the project is given in the following way:
